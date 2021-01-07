@@ -2,8 +2,7 @@
 import React from "react";
 
 const MemberArea = () => {
-
-    return <h1>Welcome Member</h1>
+  return <h1 style={{ paddingTop: "50px" }}>Welcome Member</h1>;
 };
 
 export default MemberArea;
