@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+.fixtureContainer {
+    margin: 0;
+    padding-top: 10%;
+    width: 50%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .matchContainer {
+    border: 1px solid #ccc;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    will-change: contents;
+    text-align: center;
+  }
+  
+  .fixture-container .matchContainer.FINISHED {
+    background-color: #00800080;
+  }
+  
+  .fixture-container .matchContainer.IN_PLAY {
+    animation: blink-animation 2s steps(5, start) infinite;
+    -webkit-animation: blink-animation 2s steps(5, start) infinite;
+  }
+  
+  .fixture-container .matchContainer.POSTPONED {
+    background-color: #ff000080;
+  }
+  
+  .fixture-container .matchContainer.SCHEDULED {
+    background-color: #ffa50080;
+  }
+  
+  .match {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .matchDate {
+      display: table;
+      height: 100%;
+  }
+  
+  .score {
+    display: table;
+    width: 40%;
+    table-layout: auto;
+    background: #d6181f;
+    border-color: #d6181f;
+    color: #fff;
+    margin: auto;
+  }
+  
+  .fixture-container .matchContainer .match .status {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+  .homeTeam {
+    display: table-cell;
+    text-align: right;
+    text-overflow: ellipsis;
+    width: 35%
+    
+  }
+
+  .awayTeam {
+    display: table-cell;
+    text-align: left;
+    text-overflow: ellipsis;
+    width: 35%;
+  }
