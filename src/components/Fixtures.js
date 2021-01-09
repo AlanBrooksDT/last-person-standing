@@ -31,7 +31,7 @@ const Fixtures = () => {
     return <p>No Fixtures</p>;
   } else {
     return (
-      <div style={{ paddingTop: "50px" }} className="matches">
+      <div className="matches">
         {fixtures.map((match) => {
           return (
             <MatchDetails
