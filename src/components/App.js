@@ -1,25 +1,62 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Fixtures from "./Fixtures";
 import "../App.css";
 import Login from "./Login";
 import Register from "./Register";
 import MemberArea from "./MembersArea";
+import Fixtures from "./Fixtures";
+import { Route, Redirect, BrowserRouter as Router, Switch } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Rules from "../components/Rules";
 
+
 function App() {
+  const [user, setUser] = useState();
+  const [value, setValue] = useState();
+
+  const handleChange = (e) => {
+    setValue({
+    ...value,
+    [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log("VALUE", value);
+  console.log("USER", user);
+
   return (
-    <>
-      <Navbar />
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/member-area" component={MemberArea} />
-        <Route exact path="/fixtures" component={Fixtures} />
-        <Route exact path="/rules" component={Rules} />
-      </Switch>
-    </>
+
+    <Navbar>
+    <Switch>
+    <Router>
+      <Route
+       exact
+       path="/"
+       render={() => (
+        <Login 
+         handleChange={handleChange} 
+         setUser={setUser} 
+         value={value} 
+        /> 
+        )}
+      />
+      <Route
+        path="/register"
+        render={() => <Register handleChange={handleChange} value={value}/>}
+      />
+      <Route 
+        path="/home"
+        render={() => (user? <MemberArea user={user} /> : <Redirect to="/" /> )}
+      />
+      <Route
+      path="/fixtures"
+      render={() => <Fixtures /> }
+      />
+       <Route exact path="/rules" component={Rules} />
+    </Router>
+    </Switch>
+<Navbar />
+
   );
 }
 
