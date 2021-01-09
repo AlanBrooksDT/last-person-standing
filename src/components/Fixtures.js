@@ -8,49 +8,67 @@ dayjs.extend(advancedFormat)
 
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
-
+  const [week, setWeek] = useState(0);
+    
   useEffect(() => {
-    const getFixtures = () => {
-      axios
-        .get(
-          `https://apiv2.apifootball.com/?action=get_events&from=2020-12-15&to=2020-12-20&league_id=149&APIkey=9e1cb6da84bad3656c4258767aa92267e1b1c20018b1768a5717b79fae46807e`
-        )
+    const getWeek = () => {
+     axios.get(`http://api.football-data.org/v2/competitions/2021`)
         .then((response) => {
-          setFixtures(response.data);
+          setWeek(response.data.currentSeason.currentMatchday)
+        })
+        .catch((err) => {});
+    };
+    getWeek();
+  }, []);
+
+  console.log(week);
+  
+  useEffect(() => {
+  
+    const getFixtures = () => {
+      axios.get(`http://api.football-data.org/v2/competitions/2021/matches?matchday=${week}`)
+        .then((response) => {
+          setFixtures(response.data.matches)
         })
         .catch((err) => {});
     };
     getFixtures();
-  }, []);
+  }, [week]);
 
+  axios.interceptors.request.use(
+    config => {
+      config.headers["X-Auth-Token"] = `1c195cb9649b46678c999c7bf128cddd`;
+      return config;
+    },
+    err => {
+    
+    }
+  );
+  
   console.log(fixtures)
 
   const renderMatchResults = () => {
 
-    if (fixtures.length === 0) {
-      return <p>No Fixtures</p>;
-    } else {
-      return (
+    return (
         <>
           {fixtures.map((match, i) => (
             <div key={i} className="matchContainer">
               <div className="match">
-                <div className="matchDate">{dayjs(match.match_date).format('MMMM Do, YYYY')}</div>
-                <div className="homeTeam">{match.match_hometeam_name}</div>
+                <div className="homeTeam">{match.homeTeam.name}</div>
                 <div className="score">
-                  {match.match_hometeam_score} -{" "}
-                  {match.match_awayteam_score}
+                  {match.score.fullTime.homeTeam} -{" "}
+                  {match.score.fullTime.awayTeam}
                 </div>
-                <div className="awayTeam">{match.match_awayteam_name}</div>
+                <div className="awayTeam">{match.awayTeam.name}</div>
               </div>
             </div>
           ))}
         </>
       )
-    }
   }
     return (
       <div className="fixtureContainer">
+        Current Week: {week}
         {renderMatchResults()}
       </div>
     );

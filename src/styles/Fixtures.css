@@ -21,23 +21,6 @@
     text-align: center;
   }
   
-  .fixture-container .matchContainer.FINISHED {
-    background-color: #00800080;
-  }
-  
-  .fixture-container .matchContainer.IN_PLAY {
-    animation: blink-animation 2s steps(5, start) infinite;
-    -webkit-animation: blink-animation 2s steps(5, start) infinite;
-  }
-  
-  .fixture-container .matchContainer.POSTPONED {
-    background-color: #ff000080;
-  }
-  
-  .fixture-container .matchContainer.SCHEDULED {
-    background-color: #ffa50080;
-  }
-  
   .match {
     display: table;
     table-layout: fixed;
@@ -58,11 +41,6 @@
     border-color: #d6181f;
     color: #fff;
     margin: auto;
-  }
-  
-  .fixture-container .matchContainer .match .status {
-    flex-grow: 1;
-    text-align: right;
   }
 
   .homeTeam {
