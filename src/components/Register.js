@@ -45,10 +45,11 @@ const Register = ({handleChange, value}) => {
       name="confirmPassword"
       />
       <button type="submit">Submit</button>
+
       </form>
       <Link to="/">Already a member? Login here!</Link>
     </>
-    );
+  );
 };
 
 export default Register;

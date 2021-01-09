@@ -40,10 +40,11 @@ const Login = ({handleChange, value, setUser}) => {
       name="password"
       />
       <button type="submit">Login</button>
+
       </form>
       <Link to="/register">Not a member? Register here!</Link>
     </>
-    );
+  );
 };
 
 export default Login;

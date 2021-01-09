@@ -1,10 +1,14 @@
+import React from "react";
 import "../App.css";
 import Login from "./Login";
 import Register from "./Register";
 import MemberArea from "./MembersArea";
 import Fixtures from "./Fixtures";
-import { Route, Redirect, BrowserRouter as Router } from "react-router-dom";
+import { Route, Redirect, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Rules from "../components/Rules";
+
 
 function App() {
   const [user, setUser] = useState();
@@ -21,6 +25,9 @@ function App() {
   console.log("USER", user);
 
   return (
+
+    <Navbar>
+    <Switch>
     <Router>
       <Route
        exact
@@ -45,7 +52,11 @@ function App() {
       path="/fixtures"
       render={() => <Fixtures /> }
       />
+       <Route exact path="/rules" component={Rules} />
     </Router>
+    </Switch>
+<Navbar />
+
   );
 }
 
