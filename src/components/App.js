@@ -29,9 +29,11 @@ function App() {
   console.log("USER", user);
 
   return (
+
     <Router>
       <Navbar>
         <Switch>
+
           <Route
             exact
             path="/"
@@ -57,9 +59,11 @@ function App() {
           />
           <Route path="/fixtures" render={() => <Fixtures />} />
           <Route exact path="/rules" component={Rules} />
+
         </Switch>
       </Navbar>
     </Router>
+
   );
 }
 
