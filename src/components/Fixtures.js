@@ -6,9 +6,13 @@ import advancedFormat from "dayjs/plugin/advancedFormat"
 
 dayjs.extend(advancedFormat)
 
+
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
   const [week, setWeek] = useState(0);
+
+  console.log("Fixtures");
+
     
   useEffect(() => {
     const getWeek = () => {
@@ -50,6 +54,7 @@ const Fixtures = () => {
   const renderMatchResults = () => {
 
     return (
+
         <>
           {fixtures.map((match, i) => (
             <div key={i} className="matchContainer">
@@ -70,6 +75,7 @@ const Fixtures = () => {
       <div className="fixtureContainer">
         Current Week: {week}
         {renderMatchResults()}
+
       </div>
     );
   }
