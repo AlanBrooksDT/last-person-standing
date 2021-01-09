@@ -3,10 +3,10 @@ import "../App.css";
 import Login from "./Login";
 import Register from "./Register";
 import MemberArea from "./MembersArea";
+import Navbar from "./Navbar.js";
 import Fixtures from "./Fixtures";
 import { Route, Redirect, BrowserRouter as Router, Switch } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import Rules from "../components/Rules";
 
 
@@ -25,7 +25,6 @@ function App() {
   console.log("USER", user);
 
   return (
-
     <Navbar>
     <Switch>
     <Router>
@@ -56,7 +55,6 @@ function App() {
     </Router>
     </Switch>
 <Navbar />
-
   );
 }
 

@@ -50,6 +50,7 @@ const Fixtures = () => {
   const renderMatchResults = () => {
 
     return (
+
         <>
           {fixtures.map((match, i) => (
             <div key={i} className="matchContainer">
@@ -70,6 +71,7 @@ const Fixtures = () => {
       <div className="fixtureContainer">
         Current Week: {week}
         {renderMatchResults()}
+
       </div>
     );
   }
