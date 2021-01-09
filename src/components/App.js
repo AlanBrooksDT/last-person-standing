@@ -26,10 +26,11 @@ function App() {
 
   return (
 
+   
     <Navbar>
-    <Switch>
-    <Router>
-      <Route
+      <Switch>
+        <Router>
+          <Route
        exact
        path="/"
        render={() => (
@@ -53,9 +54,9 @@ function App() {
       render={() => <Fixtures /> }
       />
        <Route exact path="/rules" component={Rules} />
-    </Router>
-    </Switch>
-<Navbar />
+        </Router>
+      </Switch>
+    </Navbar>
 
   );
 }
