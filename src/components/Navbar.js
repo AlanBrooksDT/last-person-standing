@@ -96,7 +96,6 @@ export default function Navbar(props) {
 
   const history = useHistory();
 
-
   return (
     <div className={classes.root}>
       <CssBaseline />

@@ -3,8 +3,6 @@ import React from "react";
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
 
-//comment
-
 const Login = ({handleChange, value, setUser}) => {
   const history = useHistory();
 
@@ -22,6 +20,7 @@ const Login = ({handleChange, value, setUser}) => {
       console.error(err);
     })
   };
+
 
     return (
     <>
