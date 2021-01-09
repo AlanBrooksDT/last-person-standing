@@ -1,48 +1,80 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MatchDetails from "./MatchDetails";
+import '../styles/Fixtures.css';
+import dayjs from 'dayjs'
+import advancedFormat from "dayjs/plugin/advancedFormat"
+
+dayjs.extend(advancedFormat)
 
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
-
+  const [week, setWeek] = useState(0);
+    
   useEffect(() => {
-    const getFixtures = () => {
-      axios
-        .get(
-          `https://apiv2.apifootball.com/?action=get_events&from=2021-01-15&to=2021-01-22&league_id=149&APIkey=9e1cb6da84bad3656c4258767aa92267e1b1c20018b1768a5717b79fae46807e`
-        )
+    const getWeek = () => {
+     axios.get(`http://api.football-data.org/v2/competitions/2021`)
         .then((response) => {
-          setFixtures(response.data);
+          setWeek(response.data.currentSeason.currentMatchday)
+        })
+        .catch((err) => {});
+    };
+    getWeek();
+  }, []);
+
+  console.log(week);
+  
+  useEffect(() => {
+  
+    const getFixtures = () => {
+      axios.get(`http://api.football-data.org/v2/competitions/2021/matches?matchday=${week}`)
+        .then((response) => {
+          setFixtures(response.data.matches)
         })
         .catch((err) => {});
     };
     getFixtures();
-  }, []);
+  }, [week]);
 
-  console.log(fixtures);
-  // console.log(fixtures[0]);
-  // console.log(fixtures[0].match_hometeam_name)
+  axios.interceptors.request.use(
+    config => {
+      config.headers["X-Auth-Token"] = `1c195cb9649b46678c999c7bf128cddd`;
+      return config;
+    },
+    err => {
+    
+    }
+  );
+  
+  console.log(fixtures)
 
-  // const homeTeam = fixtures.map(match => match[0].match_hometeam_name);
-  //const awayTeam = fixtures.map(match => match[0].match_awayteam_name);
+  const renderMatchResults = () => {
 
-  //console.log(homeTeam);
-  if (!fixtures.length) {
-    return <p>No Fixtures</p>;
-  } else {
     return (
-      <div className="matches">
-        {fixtures.map((match) => {
-          return (
-            <MatchDetails
-              home={match.match_hometeam_name}
-              away={match.match_awayteam_name}
-            />
-          );
-        })}
+
+        <>
+          {fixtures.map((match, i) => (
+            <div key={i} className="matchContainer">
+              <div className="match">
+                <div className="homeTeam">{match.homeTeam.name}</div>
+                <div className="score">
+                  {match.score.fullTime.homeTeam} -{" "}
+                  {match.score.fullTime.awayTeam}
+                </div>
+                <div className="awayTeam">{match.awayTeam.name}</div>
+              </div>
+            </div>
+          ))}
+        </>
+      )
+  }
+    return (
+      <div className="fixtureContainer">
+        Current Week: {week}
+        {renderMatchResults()}
+
       </div>
     );
   }
-};
+  
 
 export default Fixtures;
