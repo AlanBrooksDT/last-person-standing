@@ -96,6 +96,9 @@ export default function Navbar(props) {
 
   const history = useHistory();
 
+  console.log({history, useHistory});
+  
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -118,11 +121,8 @@ export default function Navbar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             Last Person Stands
           </Typography>
-          <Button onClick={() => history.push("/login")} color="inherit">
+          <Button onClick={() => history.push("/")} color="inherit">
             Login
-          </Button>
-          <Button onClick={() => history.push("/member-area")} color="inherit">
-            Members Area
           </Button>
           <Button onClick={() => history.push("/rules")} color="inherit">
             Rules

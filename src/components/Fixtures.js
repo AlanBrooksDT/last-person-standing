@@ -9,6 +9,8 @@ dayjs.extend(advancedFormat)
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
   const [week, setWeek] = useState(0);
+
+  console.log("Fixtures");
     
   useEffect(() => {
     const getWeek = () => {
