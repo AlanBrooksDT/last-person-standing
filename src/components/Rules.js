@@ -1,19 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledP = styled.p`
+const StyledDiv = styled.div`
+  text-align: centre;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 30px 30px 40px;
   color: white;
+  font-size: 10px;
+`;
+
+const Title = styled.h2`
+@media (max-width: 415px) {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+}
+`;
+
+const StyledP = styled.p`
+  @media (max-width: 415px) {
+    font-size: 11px
+        }
+  }
 `;
 
 const Rules = () => (
-  <div
-    style={{
-      textAlign: "centre",
-      backgroundColor: "rgba(0, 0, 0, 0.7)",
-      padding: "40px",
-    }}
-  >
-    <h2 style={{ color: "white" }}>Rules</h2>
+  <StyledDiv>
+    <Title>Rules</Title>
     <StyledP>
       Each week all entrants must pick a Premier League team to win their game.
       If entrants team win, they’re through to next round. Lose or draw, and the
@@ -32,7 +47,7 @@ const Rules = () => (
       final game of the season, then the prize fund will be equally shared
       between them.
     </StyledP>
-  </div>
+  </StyledDiv>
 );
 
 export default Rules;
