@@ -1,0 +1,88 @@
+.register {
+  width: 400px;
+  position: absolute;
+  text-align: centre;
+  top: 55%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 60px;
+}
+
+@media (max-width: 415px) {
+  .register {
+    width: 300px;
+    padding: 40px;
+    top: 45%;
+  }
+}
+
+.register h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media (max-width: 415px) {
+  .register h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+}
+
+.textbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 18px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid rgb(218, 218, 80);
+}
+
+@media (max-width: 415px) {
+  .textbox {
+    font-size: 11px;
+    padding: 6px 0;
+    margin: 6px 0;
+  }
+}
+
+.textbox i {
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+.textbox input {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  width: 250px;
+  float: left;
+  margin: 10px;
+}
+
+@media (max-width: 415px) {
+  .textbox input {
+    font-size: 14px;
+  }
+}
+
+.register button {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px 0;
+  margin: 8px 0;
+  background: none;
+  color: white;
+  border: 2px solid rgb(218, 218, 80);
+}
+
+@media (max-width: 415px) {
+  .login button {
+    font-size: 16px;
+  }
+}

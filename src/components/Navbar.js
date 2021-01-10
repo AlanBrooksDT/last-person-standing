@@ -96,7 +96,6 @@ export default function Navbar(props) {
 
   const history = useHistory();
 
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -117,7 +116,7 @@ export default function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Last Person Stands
+            Last Person Standing
           </Typography>
 
           <Button onClick={() => history.push("/")} color="inherit">
