@@ -20,12 +20,14 @@ const Login = ({handleChange, value, setUser}) => {
       console.error(err);
     })
   };
-
+  
     return (
     <>
     <h1>Login</h1>
-    <form action="submit" onSubmit={handleSubmit}>
+    <form data-testid="LoginForm" action="submit" onSubmit={handleSubmit}>
       <input
+      data-testid="Email"
+      label="Email"
       type="email"
       required
       placeholder="Email..."
@@ -33,6 +35,8 @@ const Login = ({handleChange, value, setUser}) => {
       name="email"
       />
       <input
+      data-testid="Password"
+      label="Password"
       type="password"
       required
       placeholder="Password..."
