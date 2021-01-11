@@ -45,8 +45,8 @@
   color: #fff;
   margin: auto;
   background-clip: content-box;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
 }
@@ -66,14 +66,14 @@
   text-overflow: ellipsis;
   width: 35%;
 }
-@media (max-width: 768px){
-  .fixtureContainer{
+@media (max-width: 768px) {
+  .fixtureContainer {
     width: 95%;
   }
 }
 
-@media (max-width: 540px){
-  .fixtureContainer{
+@media (max-width: 540px) {
+  .fixtureContainer {
     width: 100%;
     padding: 10px;
   }
