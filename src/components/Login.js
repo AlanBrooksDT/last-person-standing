@@ -21,7 +21,6 @@ const Login = ({handleChange, value, setUser}) => {
     })
   };
 
-
     return (
     <>
     <h1>Login</h1>

@@ -1,6 +1,11 @@
+const { default: userEvent } = require("@testing-library/user-event");
 const express = require("express");
 const router = express();
 const User = require("../models/users");
+
+// user get
+router.route("/users").get(User.getUser);
+
 
 // user register
 router.post("/", async (req, res) => {
