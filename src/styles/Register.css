@@ -13,8 +13,8 @@
 @media (max-width: 415px) {
   .register {
     width: 300px;
-    padding: 40px;
-    top: 45%;
+    padding: 35px;
+    top: 52%;
   }
 }
 
@@ -27,7 +27,8 @@
 @media (max-width: 415px) {
   .register h1 {
     font-size: 35px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 }
 

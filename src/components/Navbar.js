@@ -1,17 +1,20 @@
 import React from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  Drawer,
+  Hidden,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  Typography,
+  Divider,
+  IconButton,
+  Button,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -19,6 +22,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    height: "100vh",
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
@@ -78,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     textAlign: "left",
     justifyContent: "left",
+    fontWeight: "bold",
   },
 }));
 
@@ -118,20 +123,21 @@ export default function Navbar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             Last Person Standing
           </Typography>
+          <Hidden smDown>
+            <Button onClick={() => history.push("/")} color="inherit">
+              Login
+            </Button>
 
-          <Button onClick={() => history.push("/")} color="inherit">
-            Login
-          </Button>
-
-          <Button onClick={() => history.push("/rules")} color="inherit">
-            Rules
-          </Button>
-          <Button onClick={() => history.push("/fixtures")} color="inherit">
-            Fixtures
-          </Button>
-          <Button onClick={() => history.push("/results")} color="inherit">
-            Results
-          </Button>
+            <Button onClick={() => history.push("/rules")} color="inherit">
+              Rules
+            </Button>
+            <Button onClick={() => history.push("/fixtures")} color="inherit">
+              Fixtures
+            </Button>
+            <Button onClick={() => history.push("/results")} color="inherit">
+              Results
+            </Button>
+          </Hidden>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -156,18 +162,12 @@ export default function Navbar(props) {
 
         <Button
           className={classes.button}
-          onClick={() => history.push("/login")}
+          onClick={() => history.push("/")}
           color="inherit"
         >
           Login
         </Button>
-        <Button
-          className={classes.button}
-          onClick={() => history.push("/member-area")}
-          color="inherit"
-        >
-          Members Area
-        </Button>
+
         <Button
           className={classes.button}
           onClick={() => history.push("/rules")}
