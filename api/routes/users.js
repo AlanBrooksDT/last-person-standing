@@ -4,7 +4,9 @@ const router = express();
 const User = require("../models/users");
 
 // user get
-router.route("/users").get(User.getUser);
+router.get("/users", (req, res) =>{
+    res.status(200).send(User)
+})
 
 
 // user register
