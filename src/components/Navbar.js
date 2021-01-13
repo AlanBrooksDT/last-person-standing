@@ -133,9 +133,6 @@ export default function Navbar(props) {
             <Button onClick={() => history.push("/fixtures")} color="inherit">
               Fixtures
             </Button>
-            <Button onClick={() => history.push("/results")} color="inherit">
-              Results
-            </Button>
           </Hidden>
         </Toolbar>
       </AppBar>
@@ -180,13 +177,6 @@ export default function Navbar(props) {
           color="inherit"
         >
           Fixtures
-        </Button>
-        <Button
-          className={classes.button}
-          onClick={() => history.push("/results")}
-          color="inherit"
-        >
-          Results
         </Button>
 
         <Divider />
