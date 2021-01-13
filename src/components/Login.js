@@ -13,6 +13,7 @@ const Login = ({ handleChange, value, setUser }) => {
     axios
       .post("http://127.0.0.1:5000/login", {
         email: value.email,
+        username: value.username,
         password: value.password,
       })
       .then((res) => {
@@ -28,6 +29,17 @@ const Login = ({ handleChange, value, setUser }) => {
     <div className="login">
       <h1>Login</h1>
       <form className="login-form" data-testid="LoginForm" action="submit" onSubmit={handleSubmit}>
+      <div className="textbox">
+          <i className="fa fa-user"></i>
+          <input
+            data-testid="UserName"
+            type="username"
+            required
+            placeholder="Username..."
+            onChange={handleChange}
+            name="username"
+          />
+        </div>
         <div className="textbox">
           <i className="fa fa-user"></i>
           <input
