@@ -4,11 +4,11 @@ import "../styles/Fixtures.css";
 
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
-  const [week, setWeek] = useState(0);
+  const [week, setWeek] = useState(1);
 
   useEffect(() => {
-    const getWeek = () => {
-      axios
+    const getWeek = async () => {
+      await axios
         .get(`http://api.football-data.org/v2/competitions/2021`)
         .then((response) => {
           setWeek(response.data.currentSeason.currentMatchday);
@@ -19,8 +19,8 @@ const Fixtures = () => {
   }, []);
 
   useEffect(() => {
-    const getFixtures = () => {
-      axios
+    const getFixtures = async () => {
+      await axios
         .get(
           `http://api.football-data.org/v2/competitions/2021/matches?matchday=${week}`
         )
