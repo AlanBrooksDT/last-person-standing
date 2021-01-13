@@ -1,0 +1,7 @@
+body {
+  background-image: url("./images/pitch.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  /* backdrop-filter: blur(10px); */
+  backdrop-filter: grayscale(90%);
+}

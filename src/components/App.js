@@ -1,24 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "../App.css";
+import Login from "./Login";
+import Register from "./Register";
+import MemberArea from "./MembersArea";
+import Navbar from "./Navbar.js";
+import Fixtures from "./Fixtures";
+import {
+  Route,
+  Redirect,
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
+import { useState } from "react";
+import Rules from "../components/Rules";
 
 function App() {
+  const [user, setUser] = useState();
+  const [value, setValue] = useState();
+
+  const handleChange = (e) => {
+    setValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log("VALUE", value);
+  console.log("USER", user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <Navbar>
+        <Switch>
+
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Login
+                handleChange={handleChange}
+                setUser={setUser}
+                value={value}
+              />
+            )}
+          />
+          <Route
+            path="/register"
+            render={() => (
+              <Register handleChange={handleChange} value={value} />
+            )}
+          />
+          <Route
+            path="/home"
+            render={() =>
+              user ? <MemberArea user={user} /> : <Redirect to="/" />
+            }
+          />
+          <Route path="/fixtures" render={() => <Fixtures />} />
+          <Route exact path="/rules" component={Rules} />
+
+        </Switch>
+      </Navbar>
+    </Router>
+
   );
 }
 
