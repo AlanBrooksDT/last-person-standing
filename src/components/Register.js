@@ -14,7 +14,7 @@ const Register = ({ handleChange, value }) => {
       axios
         .post("http://127.0.0.1:5000", {
           email: value.email,
-          username: value.username,
+          // username: value.username,
           password: value.password,
         })
         .then((res) => {
@@ -39,7 +39,7 @@ const Register = ({ handleChange, value }) => {
             name="email"
           />
         </div>
-        <div className="textbox">
+        {/* <div className="textbox">
           <i className="fa fa-user"></i>
           <input
             data-testid="UserName"
@@ -49,7 +49,7 @@ const Register = ({ handleChange, value }) => {
             onChange={handleChange}
             name="username"
           />
-        </div>
+        </div> */}
         <div className="textbox">
           <i className="fa fa-unlock-alt"></i>
           <input
