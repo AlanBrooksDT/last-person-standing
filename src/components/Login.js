@@ -27,10 +27,11 @@ const Login = ({ handleChange, value, setUser }) => {
   return (
     <div className="login">
       <h1>Login</h1>
-      <form className="login-form" action="submit" onSubmit={handleSubmit}>
+      <form className="login-form" data-testid="LoginForm" action="submit" onSubmit={handleSubmit}>
         <div className="textbox">
           <i className="fa fa-user"></i>
           <input
+            data-testid="Email"
             type="email"
             required
             placeholder="Email..."
@@ -41,6 +42,7 @@ const Login = ({ handleChange, value, setUser }) => {
         <div className="textbox">
           <i className="fa fa-unlock-alt"></i>
           <input
+            data-testid="Password"
             type="password"
             required
             placeholder="Password..."

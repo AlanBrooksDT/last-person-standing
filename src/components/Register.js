@@ -26,10 +26,11 @@ const Register = ({ handleChange, value }) => {
   return (
     <div className="register">
       <h1>Register</h1>
-      <form action="submit" onSubmit={handleSubmit}>
+      <form action="submit" data-testid="RegisterForm" onSubmit={handleSubmit}>
         <div className="textbox">
           <i className="fa fa-user"></i>
           <input
+            data-testid="Email"
             type="email"
             required
             placeholder="Email..."
@@ -40,6 +41,7 @@ const Register = ({ handleChange, value }) => {
         <div className="textbox">
           <i className="fa fa-unlock-alt"></i>
           <input
+            data-testid="Password"
             type="password"
             required
             placeholder="Password..."
@@ -50,6 +52,7 @@ const Register = ({ handleChange, value }) => {
         <div className="textbox">
           <i className="fa fa-unlock-alt"></i>
           <input
+            data-testid="confirmPassword"
             type="password"
             required
             placeholder="Confirm password..."
