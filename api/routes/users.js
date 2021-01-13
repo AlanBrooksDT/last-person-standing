@@ -3,16 +3,12 @@ const express = require("express");
 const router = express();
 const User = require("../models/users");
 
-// user get
-router.get("/users", (req, res) =>{
-    res.status(200).send(User)
-})
-
 
 // user register
 router.post("/", async (req, res) => {
     const user = await User({
         email: req.body.email,
+        username: req.body.username,
         password: req.body.password,
     });
 
@@ -26,7 +22,7 @@ router.post("/", async (req, res) => {
 
 //user login
 router.post("/login", function (req, res) {
-    User.findOne({email: req.body.email}).then((user) => {
+    User.findOne({username: req.body.username}).then((user) => {
     if(!user) {
     res.status(401).json({
         message: "User not found.",
