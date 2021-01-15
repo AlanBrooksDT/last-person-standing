@@ -4,6 +4,7 @@ import "../styles/Login.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
+
 const Login = ({ handleChange, value, setUser }) => {
   const history = useHistory();
 
@@ -13,12 +14,11 @@ const Login = ({ handleChange, value, setUser }) => {
     axios
       .post("http://127.0.0.1:5000/login", {
         email: value.email,
-        username: value.username,
         password: value.password,
       })
       .then((res) => {
         setUser(res);
-        history.push("/home");
+        history.push("/");
       })
       .catch((err) => {
         console.error(err);
@@ -38,17 +38,6 @@ const Login = ({ handleChange, value, setUser }) => {
             placeholder="Email..."
             onChange={handleChange}
             name="email"
-          />
-        </div>
-        <div className="textbox">
-          <i className="fa fa-user"></i>
-          <input
-            data-testid="Username"
-            type="username"
-            required
-            placeholder="Username..."
-            onChange={handleChange}
-            name="username"
           />
         </div>
         <div className="textbox">

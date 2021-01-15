@@ -8,7 +8,6 @@ const User = require("../models/users");
 router.post("/", async (req, res) => {
     const user = await User({
         email: req.body.email,
-        username: req.body.username,
         password: req.body.password,
     });
 
@@ -32,7 +31,7 @@ router.post("/login", function (req, res) {
           res.status(200).json(user)
       } else {
           res.status(401).json({
-              message: "The username/password is incorrect!"
+              message: "The email/password is incorrect!"
           })
       }
   }

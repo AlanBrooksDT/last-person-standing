@@ -3,7 +3,7 @@ import React from "react";
 
 const MemberArea = ({user}) => {
 
-    return <h1>Welcome {user.data.username}</h1>
+    return <h1>Welcome {user.data.email}</h1>
 
 };
 
