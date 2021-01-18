@@ -40,6 +40,7 @@ class Register extends Component {
         })
         .then((res) => {
           this.props.setUser(res.data);
+          alert(`Signed up with email: ${this.state.email}`);
         })
         .catch((err) => console.error(err));
     }
