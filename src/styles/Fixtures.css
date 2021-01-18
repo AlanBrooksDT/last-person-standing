@@ -50,7 +50,7 @@
   text-align: left;
   vertical-align: middle;
   text-overflow: ellipsis;
-  width: 20%;
+  width: 25%;
   padding-left: 10px;
 }
 
@@ -59,8 +59,8 @@
   text-align: center;
   vertical-align: middle;
   text-overflow: ellipsis;
-  width: 80%;
-  font-size: 2rem;
+  width: 75%;
+  font-size: x-large;
 }
 
 .matchDate {
@@ -134,5 +134,24 @@
     width: 50px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+  }
+  .selectionHeader {
+    width: 30%;
+  }
+
+  .teamSelected {
+    width: 70%;
+    font-size: large;
+  }
+}
+
+@media (max-width: 540px) {
+  .selectionHeader {
+    width: 40%;
+  }
+
+  .teamSelected {
+    width: 60%;
+    font-size: medium;
   }
 }
