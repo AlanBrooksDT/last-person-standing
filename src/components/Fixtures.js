@@ -5,6 +5,7 @@ import "../styles/Fixtures.css";
 const Fixtures = () => {
   const [fixtures, setFixtures] = useState([]);
   const [week, setWeek] = useState(1);
+  const [team, setTeam] = useState("");
 
   useEffect(() => {
     const getWeek = async () => {
@@ -55,20 +56,35 @@ const Fixtures = () => {
     }
   };
 
+  const onClickSelectTeam = (e) => {
+    const team = e.target.getAttribute("data-value");
+    setTeam(team);
+  };
+
   const renderMatchResults = () => {
     return (
       <>
         {fixtures.map((match, i) => (
           <div key={i} className={`${match.status} matchContainer`}>
             <div className="match">
-              <div className="homeTeam" data-testid="homeTeam">
+              <div
+                className="homeTeam"
+                data-testid="homeTeam"
+                data-value={match.homeTeam.name}
+                onClick={onClickSelectTeam}
+              >
                 {match.homeTeam.name}
               </div>
               <div className={`${match.status} score`} data-testid="score">
                 {match.score.fullTime.homeTeam} -{" "}
                 {match.score.fullTime.awayTeam}
               </div>
-              <div className="awayTeam" data-testid="awayTeam">
+              <div
+                className="awayTeam"
+                data-testid="awayTeam"
+                data-value={match.awayTeam.name}
+                onClick={onClickSelectTeam}
+              >
                 {match.awayTeam.name}
               </div>
               <div className="matchStatus">{renderStatus(match.status)}</div>
@@ -82,6 +98,10 @@ const Fixtures = () => {
   return (
     <div className="fixtureContainer" data-testid="fixtureContainer">
       {renderMatchResults()}
+      <div className="teamSelection">
+        <div className="selectionHeader">Your Selected Team:</div>
+        <div className="teamSelected">{team}</div>
+      </div>
     </div>
   );
 };
