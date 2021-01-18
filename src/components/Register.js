@@ -105,17 +105,18 @@ class Register extends Component {
     return (
       <div className="register">
         <h1>Register</h1>
-        <form className="demoForm" onSubmit={this.handleSubmit}>
-          <div className="panel panel-default">
+        <form action="submit" data-testid="RegisterForm"  onSubmit={this.handleSubmit}>
+          <div className="textbox">
             <FormErrors formErrors={this.state.formErrors} />
           </div>
           <div
-            className={`form-group ${this.errorClass(
+            className={`textbox ${this.errorClass(
               this.state.formErrors.email
             )}`}
           >
             <i className="fa fa-user"></i>
             <input
+              data-testid="Email"
               type="email"
               required
               name="email"
@@ -125,7 +126,7 @@ class Register extends Component {
             />
           </div>
           <div
-            className={`form-group ${this.errorClass(
+            className={`textbox ${this.errorClass(
               this.state.formErrors.password
             )}`}
           >
@@ -140,12 +141,12 @@ class Register extends Component {
             />
           </div>
           <div
-            className={`form-group ${this.errorClass(
+            className={`textbox ${this.errorClass(
               this.state.formErrors.confirmPassword
             )}`}
           >
-            <label htmlFor="confirmPassword">Confirm password</label>
             <input
+             data-testid="confirmPassword"
               type="confirmPassword"
               className="form-control"
               name="confirmPassword"
