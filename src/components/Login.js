@@ -17,7 +17,7 @@ const Login = ({ handleChange, value, setUser }) => {
       })
       .then((res) => {
         setUser(res);
-        history.push("/home");
+        history.push("/fixtures");
       })
       .catch((err) => {
         console.error(err);
@@ -27,7 +27,12 @@ const Login = ({ handleChange, value, setUser }) => {
   return (
     <div className="login">
       <h1>Login</h1>
-      <form className="login-form" data-testid="LoginForm" action="submit" onSubmit={handleSubmit}>
+      <form
+        className="login-form"
+        data-testid="LoginForm"
+        action="submit"
+        onSubmit={handleSubmit}
+      >
         <div className="textbox">
           <i className="fa fa-user"></i>
           <input

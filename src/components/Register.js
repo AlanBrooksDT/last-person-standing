@@ -2,7 +2,7 @@
 import axios from "axios";
 import React from "react";
 import "../styles/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Register = ({ handleChange, value }) => {
   const handleSubmit = (e) => {
