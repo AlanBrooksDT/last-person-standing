@@ -3,10 +3,7 @@ const express = require("express");
 const router = express();
 const User = require("../models/users");
 
-// user get
-router.get("/users", (req, res) =>{
-    res.status(200).send(User)
-})
+// user get to be added at a later date
 
 
 // user register
