@@ -2,9 +2,10 @@
 import axios from "axios";
 import React from "react";
 import "../styles/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const Register = ({ handleChange, value }) => {
+const Register = ({ handleChange, value, setUser }) => {
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -17,7 +18,8 @@ const Register = ({ handleChange, value }) => {
           password: value.password,
         })
         .then((res) => {
-          console.log(res);
+          setUser(res);
+          history.push("/");
         })
         .catch((err) => console.error(err));
     }
