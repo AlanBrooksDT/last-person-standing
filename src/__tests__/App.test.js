@@ -10,9 +10,3 @@ describe("App render Page", () => {
     expect(getByTestId("App")).toBeInTheDocument();
   });
 });
-
-// test("renders Last Person Standing", () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/last Person Standing/i);
-//   expect(linkElement).toBeInTheDocument();
-// });

@@ -5,8 +5,6 @@ exports[`Fixtures renders 1`] = `
   <div
     class="fixtureContainer"
     data-testid="fixtureContainer"
-  >
-    Current Week: 0
-  </div>
+  />
 </DocumentFragment>
 `;

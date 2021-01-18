@@ -99,8 +99,6 @@ class Register extends Component {
     return error.length === 0 ? "" : "has-error";
   }
 
-//styling needs fixed
-
   render() {
     return (
       <div className="register">
@@ -132,6 +130,7 @@ class Register extends Component {
           >
             <i className="fa fa-unlock-alt"></i>
             <input
+              data-testid="Password"
               type="password"
               className="form-control"
               name="password"
