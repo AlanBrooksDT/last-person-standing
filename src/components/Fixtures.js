@@ -40,8 +40,6 @@ const Fixtures = () => {
     (err) => {}
   );
 
-  console.log(fixtures);
-
   const renderStatus = (status) => {
     switch (status) {
       case "FINISHED":
