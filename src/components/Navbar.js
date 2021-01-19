@@ -168,13 +168,6 @@ export default function Navbar(props) {
         >
           Rules
         </Button>
-        <Button
-          className={classes.button}
-          onClick={() => history.push("/fixtures")}
-          color="inherit"
-        >
-          Fixtures
-        </Button>
 
         <Divider />
       </Drawer>
