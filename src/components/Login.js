@@ -20,7 +20,7 @@ const Login = ({ handleChange, value, setUser }) => {
       })
       .then((res) => {
         setUser(res);
-        history.push("/home");
+        history.push("/");
       })
       .catch((err) => {
         console.error(err);
