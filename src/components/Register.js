@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { FormErrors } from "./FormErrors";
 import "../styles/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 class Register extends Component {
@@ -28,6 +28,7 @@ class Register extends Component {
   };
 
   handleSubmit = (e) => {
+
     e.preventDefault();
 
     if (this.state.password === this.state.confirmPassword) {
@@ -39,8 +40,10 @@ class Register extends Component {
           password: this.state.password,
         })
         .then((res) => {
+
           this.props.setUser(res.data);
           alert(`Signed up with email: ${this.state.email}`);
+
         })
         .catch((err) => console.error(err));
     }
