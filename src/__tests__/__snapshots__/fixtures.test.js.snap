@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fixtures renders 1`] = `
+<DocumentFragment>
+  <div
+    class="fixtureContainer"
+    data-testid="fixtureContainer"
+  />
+</DocumentFragment>
+`;

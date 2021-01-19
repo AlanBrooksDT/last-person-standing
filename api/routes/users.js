@@ -4,6 +4,10 @@ const router = express();
 const User = require("../models/users");
 
 
+// user get to be added at a later date
+
+
+
 // user register
 router.post("/", async (req, res) => {
     const user = await User({

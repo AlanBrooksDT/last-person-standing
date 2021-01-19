@@ -4,10 +4,11 @@
 
 .fixtureContainer {
   margin: 0;
+  margin-top: 40px;
   padding: 40px;
-  width: 55%;
-  height: 100%;
+  width: calc(-10vw + 70%);
   display: block;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(0, 0, 0, 0.8);
@@ -23,12 +24,43 @@
   text-align: center;
 }
 
+.matchContainer.POSTPONED {
+  background-color: #d6181f;
+}
+
 .match {
   display: table;
   table-layout: fixed;
   width: 100%;
   height: 100%;
   padding: 10px;
+}
+
+.teamSelection {
+  border: 1px solid #ccc;
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.selectionHeader {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  width: 25%;
+  padding-left: 10px;
+}
+
+.teamSelected {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  width: 75%;
+  font-size: x-large;
 }
 
 .matchDate {
@@ -39,7 +71,7 @@
 .score {
   display: table-cell;
   vertical-align: middle;
-  width: 40px;
+  width: 60px;
   table-layout: auto;
   background: #d6181f;
   color: #fff;
@@ -51,12 +83,20 @@
   border-bottom: 5px solid transparent;
 }
 
+.score.FINISHED {
+  background-color: green;
+}
+
 .homeTeam {
   display: table-cell;
   text-align: right;
   vertical-align: middle;
   text-overflow: ellipsis;
   width: 35%;
+}
+
+.homeTeam:hover {
+  cursor: pointer;
 }
 
 .awayTeam {
@@ -66,7 +106,19 @@
   text-overflow: ellipsis;
   width: 35%;
 }
-@media (max-width: 768px) {
+
+.awayTeam:hover {
+  cursor: pointer;
+}
+
+.matchStatus {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  width: 60px;
+}
+
+@media (max-width: 868px) {
   .fixtureContainer {
     width: 95%;
   }
@@ -77,9 +129,29 @@
     width: 100%;
     padding: 10px;
   }
+
   .score {
     width: 50px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+  }
+  .selectionHeader {
+    width: 30%;
+  }
+
+  .teamSelected {
+    width: 70%;
+    font-size: large;
+  }
+}
+
+@media (max-width: 540px) {
+  .selectionHeader {
+    width: 40%;
+  }
+
+  .teamSelected {
+    width: 60%;
+    font-size: medium;
   }
 }
