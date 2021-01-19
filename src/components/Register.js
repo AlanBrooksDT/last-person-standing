@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { FormErrors } from "./FormErrors";
 import "../styles/Register.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class Register extends Component {
@@ -150,7 +150,7 @@ class Register extends Component {
           >
             <input
              data-testid="confirmPassword"
-              type="confirmPassword"
+              type="password"
               className="form-control"
               name="confirmPassword"
               placeholder="Confirm password"
