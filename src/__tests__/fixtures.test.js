@@ -8,6 +8,5 @@ describe("Fixtures", () => {
 
     expect(asFragment()).toMatchSnapshot();
     expect(getByTestId("fixtureContainer")).toBeInTheDocument();
-    expect(getByTestId("homeTeam")).toBeInTheDocument();
   });
 });

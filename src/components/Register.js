@@ -28,6 +28,7 @@ class Register extends Component {
   };
 
   handleSubmit = (e) => {
+
     e.preventDefault();
 
     if (this.state.password === this.state.confirmPassword) {
@@ -39,7 +40,10 @@ class Register extends Component {
           password: this.state.password,
         })
         .then((res) => {
+
           this.props.setUser(res.data);
+          alert(`Signed up with email: ${this.state.email}`);
+
         })
         .catch((err) => console.error(err));
     }
@@ -146,7 +150,7 @@ class Register extends Component {
           >
             <input
              data-testid="confirmPassword"
-              type="confirmPassword"
+              type="password"
               className="form-control"
               name="confirmPassword"
               placeholder="Confirm password"

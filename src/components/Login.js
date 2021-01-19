@@ -5,9 +5,7 @@ import axios from "axios";
 // import { FormErrors } from './FormErrors';
 import { Link, useHistory } from "react-router-dom";
 
-
 const Login = ({ handleChange, value, setUser }) => {
-  
   const history = useHistory();
 
   const handleSubmit = (e) => {

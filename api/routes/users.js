@@ -3,7 +3,9 @@ const express = require("express");
 const router = express();
 const User = require("../models/users");
 
+
 // user get to be added at a later date
+
 
 
 // user register
@@ -23,7 +25,7 @@ router.post("/", async (req, res) => {
 
 //user login
 router.post("/login", function (req, res) {
-    User.findOne({email: req.body.email}).then((user) => {
+    User.findOne({username: req.body.username}).then((user) => {
     if(!user) {
     res.status(401).json({
         message: "User not found.",
@@ -33,7 +35,7 @@ router.post("/login", function (req, res) {
           res.status(200).json(user)
       } else {
           res.status(401).json({
-              message: "The username/password is incorrect!"
+              message: "The email/password is incorrect!"
           })
       }
   }

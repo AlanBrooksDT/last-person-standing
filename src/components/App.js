@@ -52,9 +52,9 @@ function App() {
             )}
           />
           <Route
-            path="/home"
+            path="/home" //this was home
             render={() =>
-              user ? <MemberArea user={user} /> : <Redirect to="/" />
+              user ? <MemberArea user={user} /> : <Redirect to="/" /> // this was "/"
             }
           />
           <Route path="/fixtures" render={() => <Fixtures />} />
