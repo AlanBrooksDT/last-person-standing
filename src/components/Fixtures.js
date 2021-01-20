@@ -10,7 +10,7 @@ const Fixtures = () => {
   useEffect(() => {
     const getWeek = async () => {
       await axios
-        .get(`http://api.football-data.org/v2/competitions/2021`)
+        .get(`https://api.football-data.org/v2/competitions/2021`)
         .then((response) => {
           setWeek(response.data.currentSeason.currentMatchday);
         })
@@ -23,7 +23,7 @@ const Fixtures = () => {
     const getFixtures = async () => {
       await axios
         .get(
-          `http://api.football-data.org/v2/competitions/2021/matches?matchday=${week}`
+          `https://api.football-data.org/v2/competitions/2021/matches?matchday=${week}`
         )
         .then((response) => {
           setFixtures(response.data.matches);
