@@ -11,7 +11,7 @@ const Login = ({ handleChange, value, setUser }) => {
     e.preventDefault();
 
     axios
-      .post("http://127.0.0.1:5000/login", {
+      .post("https://last-person-standing-43nbn0lgb.vercel.app/", {
         email: value.email,
         password: value.password,
       })
