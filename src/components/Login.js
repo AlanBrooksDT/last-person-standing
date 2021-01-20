@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { Component } from "react";
 import "../styles/Login.css";
 import axios from "axios";
+// import { FormErrors } from './FormErrors';
 import { Link, useHistory } from "react-router-dom";
 
 const Login = ({ handleChange, value, setUser }) => {
@@ -17,7 +18,7 @@ const Login = ({ handleChange, value, setUser }) => {
       })
       .then((res) => {
         setUser(res);
-        history.push("/home");
+        history.push("/fixtures");
       })
       .catch((err) => {
         console.error(err);
@@ -27,7 +28,12 @@ const Login = ({ handleChange, value, setUser }) => {
   return (
     <div className="login">
       <h1>Login</h1>
-      <form className="login-form" data-testid="LoginForm" action="submit" onSubmit={handleSubmit}>
+      <form
+        className="login-form"
+        data-testid="LoginForm"
+        action="submit"
+        onSubmit={handleSubmit}
+      >
         <div className="textbox">
           <i className="fa fa-user"></i>
           <input

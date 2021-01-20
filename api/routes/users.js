@@ -3,10 +3,9 @@ const express = require("express");
 const router = express();
 const User = require("../models/users");
 
-// user get
-router.get("/users", (req, res) =>{
-    res.status(200).send(User)
-})
+
+// user get to be added at a later date
+
 
 
 // user register
@@ -36,7 +35,7 @@ router.post("/login", function (req, res) {
           res.status(200).json(user)
       } else {
           res.status(401).json({
-              message: "The username/password is incorrect!"
+              message: "The email/password is incorrect!"
           })
       }
   }

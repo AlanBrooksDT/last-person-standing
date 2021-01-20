@@ -18,15 +18,15 @@ function App() {
   const [user, setUser] = useState();
   const [value, setValue] = useState();
 
-  const handleChange = (e) => {
+  const handleChangeOnLoginForm = (e) => {
     setValue({
       ...value,
       [e.target.name]: e.target.value,
     });
   };
 
-  console.log("VALUE", value);
-  console.log("USER", user);
+  // console.log("VALUE", value);
+  // console.log("USER", user);
 
   return (
 
@@ -39,7 +39,7 @@ function App() {
             path="/"
             render={() => (
               <Login
-                handleChange={handleChange}
+                handleChange={handleChangeOnLoginForm}
                 setUser={setUser}
                 value={value}
               />
@@ -48,13 +48,13 @@ function App() {
           <Route
             path="/register"
             render={() => (
-              <Register handleChange={handleChange} value={value} />
+              <Register setUser={setUser} value={value} />
             )}
           />
           <Route
-            path="/home"
+            path="/home" //this was home
             render={() =>
-              user ? <MemberArea user={user} /> : <Redirect to="/" />
+              user ? <MemberArea user={user} /> : <Redirect to="/" /> // this was "/"
             }
           />
           <Route path="/fixtures" render={() => <Fixtures />} />
