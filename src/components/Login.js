@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import "../styles/Login.css";
 import axios from "axios";
-// import { FormErrors } from './FormErrors';
 import { Link, useHistory } from "react-router-dom";
 
 const Login = ({ handleChange, value, setUser }) => {
