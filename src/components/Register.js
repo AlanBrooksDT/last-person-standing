@@ -138,7 +138,7 @@ class Register extends Component {
               type="password"
               className="form-control"
               name="password"
-              placeholder="Password"
+              placeholder="Enter password"
               value={this.state.password}
               onChange={this.handleUserInput}
             />
