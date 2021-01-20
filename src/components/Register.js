@@ -11,8 +11,8 @@ class Register extends Component {
     this.state = {
       email: "",
       password: "",
-      confirmPassword: "",
-      formErrors: { email: "", password: "", confirmPassword: ""},
+      Password: "",
+      formErrors: { email: "", password: "", Password: ""},
       emailValid: false,
       passwordValid: false,
       formValid: false,
@@ -31,7 +31,7 @@ class Register extends Component {
 
     e.preventDefault();
 
-    if (this.state.password === this.state.confirmPassword) {
+    if (this.state.password === this.state.Password) {
       console.log("Passwords match!");
 
       axios
@@ -75,13 +75,13 @@ class Register extends Component {
           passwordValid: passwordValid
         }));
         break;
-        case "confirmPassword":
+        case "Password":
          const confirmPasswordValid = value === this.state.password;
           this.setState((prevState) => ({
             ...prevState,
             formErrors: {
               ...prevState.formErrors,
-              confirmPassword: confirmPasswordValid ? "" : " does not match"
+              Password: confirmPasswordValid ? "" : " does not match"
             },
             confirmPasswordValid: confirmPasswordValid
           }));
@@ -145,16 +145,16 @@ class Register extends Component {
           </div>
           <div
             className={`textbox ${this.errorClass(
-              this.state.formErrors.confirmPassword
+              this.state.formErrors.Password
             )}`}
           >
             <input
              data-testid="confirmPassword"
               type="password"
               className="form-control"
-              name="confirmPassword"
+              name="Password"
               placeholder="Confirm password"
-              value={this.state.confirmPassword}
+              value={this.state.Password}
               onChange={this.handleUserInput}
             />
           </div>
