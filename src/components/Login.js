@@ -11,7 +11,7 @@ const Login = ({ handleChange, value, setUser }) => {
     e.preventDefault();
 
     axios
-      .post("https://last-person-standing-43nbn0lgb.vercel.app/", {
+      .post("https://last-person-standing.herokuapp.com/", {
         email: value.email,
         password: value.password,
       })

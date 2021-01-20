@@ -35,7 +35,7 @@ class Register extends Component {
       console.log("Passwords match!");
 
       axios
-        .post("http://127.0.0.1:5000", {
+        .post("https://last-person-standing.herokuapp.com/register", {
           email: this.state.email,
           password: this.state.password,
         })
