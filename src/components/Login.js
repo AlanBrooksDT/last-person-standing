@@ -11,7 +11,7 @@ const Login = ({ handleChange, value, setUser }) => {
     e.preventDefault();
 
     axios
-      .post("https://last-person-standing.herokuapp.com/", {
+      .post("https://last-person-standing.herokuapp.com/login", {
         email: value.email,
         password: value.password,
       })
