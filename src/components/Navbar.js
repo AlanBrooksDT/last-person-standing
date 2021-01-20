@@ -169,6 +169,7 @@ export default function Navbar(props) {
           Rules
         </Button>
 
+
         <Divider />
       </Drawer>
       <main
