@@ -57,7 +57,7 @@ const Login = ({ handleChange, value, setUser }) => {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <Link to="/register" style={{ fontSize: "16px" }}>
+      <Link to="/register" className="link">
         Not a member? Register here!
       </Link>
     </div>

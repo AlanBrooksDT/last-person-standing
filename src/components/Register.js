@@ -166,7 +166,7 @@ class Register extends Component {
             Register
           </button>
         </form>
-        <Link to="/" style={{ fontSize: "16px" }}>
+        <Link to="/" className="link">
           Already a member? Login here!
         </Link>
       </div>
