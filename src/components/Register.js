@@ -4,6 +4,8 @@ import { FormErrors } from "./FormErrors";
 import "../styles/Register.css";
 import { Link } from "react-router-dom";
 
+// https://last-person-standing.herokuapp.com/register
+
 
 class Register extends Component {
   constructor(props) {
@@ -33,9 +35,8 @@ class Register extends Component {
 
     if (this.state.password === this.state.confirmPassword) {
       console.log("Passwords match!");
-
       axios
-        .post("https://last-person-standing.herokuapp.com/register", {
+        .post("http://localhost:5000/register", {
           email: this.state.email,
           password: this.state.password,
         })
