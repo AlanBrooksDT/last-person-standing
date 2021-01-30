@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express();
 const User = require("../models/users");
-const cors = require("cors")
 
 // user register
 router.post("/register", async (req, res) => {
-    router.use(cors());
+    
+
+
     const user = await User({
         email: req.body.email,
         password: req.body.password,

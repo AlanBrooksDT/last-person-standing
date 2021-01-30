@@ -36,7 +36,7 @@ class Register extends Component {
     if (this.state.password === this.state.confirmPassword) {
       console.log("Passwords match!");
       axios
-        .post("http://localhost:5000/register", {
+        .post("// https://last-person-standing.herokuapp.com/register", {
           email: this.state.email,
           password: this.state.password,
         })
