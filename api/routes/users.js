@@ -4,6 +4,9 @@ const User = require("../models/users");
 
 // user register
 router.post("/register", async (req, res) => {
+    
+
+
     const user = await User({
         email: req.body.email,
         password: req.body.password,
